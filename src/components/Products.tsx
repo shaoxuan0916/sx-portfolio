@@ -36,7 +36,7 @@ export const Products = () => {
                 alt="thumbnail"
                 height="200"
                 width="200"
-                className="rounded-md"
+                className="rounded-md object-cover h-40 w-60 shadow-md"
               />
               <div className="flex flex-col justify-between">
                 <div>

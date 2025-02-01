@@ -85,7 +85,7 @@ export const Blogs = () => {
                 height="200"
                 width="200"
                 objectFit="cover"
-                className="rounded-md object-cover h-40 w-60"
+                className="rounded-md object-cover h-40 w-60 shadow-md"
               />
               <div className="flex flex-col col-span-3">
                 <Heading className="text-lg md:text-lg lg:text-lg">
