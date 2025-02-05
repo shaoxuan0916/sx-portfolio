@@ -1,34 +1,12 @@
 "use client";
-import { Blog } from "@/types/blog";
+
 import Image from "next/image";
 import React, { useState } from "react";
 import { Heading } from "./Heading";
 import { Paragraph } from "./Paragraph";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-
-const blogsData: Blog[] = [
-  {
-    title: "Using Resend with a NestJS Backend: A Step-by-Step Guide",
-    description:
-      "This guide will walk you through the process of using Resend with a NestJS backend.",
-    href: "https://medium.com/@shaoxuandev10/using-resend-with-a-nestjs-backend-a-step-by-step-guide-54a449d1b3d4?sk=d77140c983ecbb2abe4ef8a77a4d92a8",
-    date: "2025-01-24",
-    slug: "using-resend-with-a-nestjs-backend-a-step-by-step-guide",
-    image: "/images/blogs/blog-1.jpeg",
-    tags: ["web development", "nestjs", "resend"],
-  },
-  {
-    title: "Master Onboarding: Increase User Stickiness and Reduce Churn",
-    description:
-      "Great onboarding isn't just a nice-to-have; it's what turns first-time users into loyal customers.",
-    href: "https://shaoxuandev10.medium.com/master-onboarding-increase-user-stickiness-and-reduce-churn-148ce711ffe0?sk=0d83dcbacee08f2463a061065067bcbf",
-    date: "2025-02-01",
-    slug: "master-onboarding-increase-user-stickiness-and-reduce-churn",
-    image: "/images/blogs/blog-2.jpg",
-    tags: ["web development", "nestjs", "resend"],
-  },
-];
+import { blogsData } from "@/constants/blogs";
 
 export const Blogs = () => {
   const [hovered, setHovered] = useState<string | null>(null);
@@ -104,7 +82,7 @@ export const Blogs = () => {
                     </span>
                   ))}
                 </div>
-                <div className="pl-1 mt-auto text-xs text-gray-500">
+                <div className="pl-1 pt-3 mt-auto text-xs text-gray-500">
                   <div className="flex items-center">
                     <span className="mr-2">📅</span>
                     {new Date(blog.date).toDateString()}

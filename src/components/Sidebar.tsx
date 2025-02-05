@@ -1,10 +1,11 @@
 "use client";
+
 import { navlinks } from "@/constants/navlinks";
 import { Navlink } from "@/types/navlink";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { Heading } from "./Heading";
 import { socials } from "@/constants/socials";
@@ -13,18 +14,26 @@ import { IconLayoutSidebarRightCollapse } from "@tabler/icons-react";
 import { isMobile } from "@/lib/utils";
 
 export const Sidebar = () => {
-  const [open, setOpen] = useState(isMobile() ? false : true);
+  const [open, setOpen] = useState<boolean | undefined>(undefined);
+
+  useEffect(() => {
+    setOpen(!isMobile());
+  }, []);
+
+  if (open === undefined) return null;
 
   return (
     <>
       <AnimatePresence>
         {open && (
           <motion.div
-            // initial={{ x: -200 }}
-            // animate={{ x: 0 }}
-            // transition={{ duration: 0.2, ease: "linear" }}
-            // exit={{ x: -200 }}
-            className="px-6 z-[100] py-10 bg-neutral-100 max-w-[14rem] lg:w-fit fixed lg:relative h-screen left-0 flex flex-col justify-between"
+            initial={{ x: -200 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.2, ease: "linear" }}
+            exit={{ x: -200 }}
+            className={twMerge(
+              "px-6 z-[100] py-10 bg-neutral-100 max-w-[14rem] lg:w-fit fixed lg:relative h-screen left-0 flex flex-col justify-between"
+            )}
           >
             <div className="flex-1 overflow-auto">
               <SidebarHeader />
@@ -49,7 +58,7 @@ export const Sidebar = () => {
 export const Navigation = ({
   setOpen,
 }: {
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpen: React.Dispatch<React.SetStateAction<boolean | undefined>>;
 }) => {
   const pathname = usePathname();
 
