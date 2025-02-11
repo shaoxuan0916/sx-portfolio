@@ -19,7 +19,18 @@ export const blogs: Blog[] = [
     date: "2025-02-01",
     slug: "master-onboarding-increase-user-stickiness-and-reduce-churn",
     image: "/images/blogs/blog-2.jpg",
-    tags: ["web development", "nestjs", "resend"],
+    tags: ["web development", "ux-design", "saas"],
+  },
+  {
+    title:
+      "Step-by-Step Guide: Enhancing UX with Parallel Routes & Interceptors in Next.js",
+    description:
+      "Learn how to combine Next.js Parallel Routes and Interceptors to create seamless and dynamic user experiences.",
+    href: "https://shaoxuandev10.medium.com/step-by-step-guide-enhancing-ux-with-parallel-routes-interceptors-in-next-js-9bac4a34e4ff?sk=7b9de9f376cc8b12e85e010982aed34d",
+    date: "2025-02-11",
+    slug: "step-by-step-guide-enhancing-ux-with-parallel-routes-interceptors-in-next-js",
+    image: "/images/blogs/blog-3.png",
+    tags: ["web development", "nextjs", "frontend"],
   },
 ];
 
